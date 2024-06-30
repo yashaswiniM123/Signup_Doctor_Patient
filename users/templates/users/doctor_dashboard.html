@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Doctor Dashboard</h2>
+    <p>Welcome, {{ user.username }}</p>
+    <p>Email: {{ user.email }}</p>
+    <p>First Name: {{ user.first_name }}</p>
+    <p>Last Name: {{ user.last_name }}</p>
+    <p>Address: {{ user.address_line1 }}, {{ user.city }}, {{ user.state }}, {{ user.pincode }}</p>
+    {% if user.profile_picture %}
+        <img src="{{ user.profile_picture.url }}" alt="Profile Picture">
+    {% endif %}
+    <p><button><a href="{% url 'signup' %}">Back to Signup</a></button></p> 
+
+</body>
+</html>

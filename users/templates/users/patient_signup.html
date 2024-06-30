@@ -1,0 +1,123 @@
+<!--<!DOCTYPE html>
+<html>
+<body>
+    <h2>Patient Signup</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Sign Up</button>
+    </form>
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Signup</title>
+    <style>
+        /* Add your custom CSS here */
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 1em;
+            border: 1px solid #ccc;
+            border-radius: 1em;
+        }
+
+        div {
+            margin-bottom: 1em;
+        }
+
+        label {
+            margin-bottom: .5em;
+            color: #333333;
+            display: block;
+        }
+
+        input {
+            border: 1px solid #CCCCCC;
+            padding: .5em;
+            font-size: 1em;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 0.7em;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 1em;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            let password = document.getElementById("id_password1").value;
+            let confirmPassword = document.getElementById("id_password2").value;
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Patient Signup</h2>
+    <form method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
+        {% csrf_token %}
+        <div>
+            {{ form.username.label_tag }}
+            {{ form.username }}
+        </div>
+        <div>
+            {{ form.first_name.label_tag }}
+            {{ form.first_name }}
+        </div>
+        <div>
+            {{ form.last_name.label_tag }}
+            {{ form.last_name }}
+        </div>
+        <div>
+            {{ form.email.label_tag }}
+            {{ form.email }}
+        </div>
+        <div>
+            {{ form.password1.label_tag }}
+            {{ form.password1 }}
+        </div>
+        <div>
+            {{ form.password2.label_tag }}
+            {{ form.password2 }}
+        </div>
+        <div>
+            {{ form.profile_picture.label_tag }}
+            {{ form.profile_picture }}
+        </div>
+        <div>
+            {{ form.address_line1.label_tag }}
+            {{ form.address_line1 }}
+        </div>
+        <div>
+            {{ form.city.label_tag }}
+            {{ form.city }}
+        </div>
+        <div>
+            {{ form.state.label_tag }}
+            {{ form.state }}
+        </div>
+        <div>
+            {{ form.pincode.label_tag }}
+            {{ form.pincode }}
+        </div>
+        <button type="submit">Sign Up</button>
+    </form>
+</body>
+</html>
+
+
